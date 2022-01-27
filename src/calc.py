@@ -1,7 +1,7 @@
 # -*- coding: utf-8; -*-
 from math import sqrt, acos, sin, cos
 import copy
-def intersection_l_l(x1,y1, x2,y2, x3, y3, x4, y4):#Пересечение векторов. Принимает координаты 2 линий, проверяет их на параллельность, если не параллельны - ищет точку пересечения, если такая есть - возвращает ее координаты, иначе вернет None, None
+def intersection_l_l(x1,y1, x2,y2, x3, y3, x4, y4):#ntersection of vectors. Accepts coordinates of 2 lines, checks them for parallelism, if not parallel - looks for an intersection point, if there is one - returns its coordinates, otherwise returns None, None
     ua1 = (x4 - x3)*(y1 - y3) - (y4 - y3)*(x1 - x3)
     ub1 = (x2 - x1)*(y1 - y3) - (y2 - y1)*(x1 - x3)
     u2 = (y4 - y3)*(x2 - x1) - (x4 - x3)*(y2 - y1)
