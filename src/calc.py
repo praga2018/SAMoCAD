@@ -101,7 +101,7 @@ def min_distanse(x1,y1, x2,y2, x3, y3):
 
     return x, y
 
-def intersection_stright(x1,y1, x2,y2, x3, y3, x4, y4):#По координатам 2 линий находит уравнения их прямых и определяет, есть ли у них общая точка - если есть возвращает ее.
+def intersection_stright(x1,y1, x2,y2, x3, y3, x4, y4):#Based on the coordinates of 2 lines, it finds the equations of their lines and determines whether they have a common point - if there is, it returns it.
     x = None
     y = None
     if x1 == x3 and y1 == y3:
@@ -411,7 +411,7 @@ def calc_angle(x0, y0, px1, py1, px2, py2):
         return -a
         
 
-def rotateCalc(x0,y0,xold,yold,mcos,msin): #считает координаты поворота
+def rotateCalc(x0,y0,xold,yold,mcos,msin): #calculates rotation coordinates
     x=(xold-x0)*mcos+(yold-y0)*msin
     y=-(xold-x0)*msin+(yold-y0)*mcos
     x += x0
@@ -423,7 +423,7 @@ def rotate_lines(x, y, lines, angle = None, msin = None, mcos = None):
         msin = sin(angle)
         mcos = cos(angle)
     for i in lines:
-        i[0],i[1] = rotateCalc(x,y,i[0],i[1],mcos,msin) #Пересчитать координаты певернутого
+        i[0],i[1] = rotateCalc(x,y,i[0],i[1],mcos,msin) #Recalculate the coordinates of the inverted
         i[2],i[3] = rotateCalc(x,y,i[2],i[3],mcos,msin)
     return lines
 
@@ -432,7 +432,7 @@ def rotate_points(x, y, points, angle = None, msin = None, mcos = None):
         msin = sin(angle)
         mcos = cos(angle)
     for i in points:
-        i[0],i[1] = rotateCalc(x,y,i[0],i[1],mcos,msin) #Пересчитать координаты певернутого
+        i[0],i[1] = rotateCalc(x,y,i[0],i[1],mcos,msin) #Recalculate the coordinates of the inverted
     return points
 
 def mirrorCalc(px1, py1, xold, yold,  mcos, msin):
@@ -444,11 +444,11 @@ def mirrorCalc(px1, py1, xold, yold,  mcos, msin):
     
 def mirror_lines(x, y, lines, msin, mcos):
     for i in lines:
-        i[0],i[1] = mirrorCalc(x,y,i[0],i[1],mcos,msin) #Пересчитать координаты певернутого
+        i[0],i[1] = mirrorCalc(x,y,i[0],i[1],mcos,msin) #Recalculate the coordinates of the inverted
         i[2],i[3] = mirrorCalc(x,y,i[2],i[3],mcos,msin)
     return lines
 
 def mirror_points(x, y, points, msin, mcos):
     for i in points:
-        i[0],i[1] = mirrorCalc(x,y,i[0],i[1],mcos,msin) #Пересчитать координаты певернутого
+        i[0],i[1] = mirrorCalc(x,y,i[0],i[1],mcos,msin) #Recalculate the coordinates of the inverted
     return points    
